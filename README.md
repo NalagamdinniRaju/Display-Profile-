@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Profile Card Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React-based application dynamically renders user profile data fetched from an API and displays it in two visually distinct designs. Users can toggle between the designs to view the profile information in different layouts.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1. **Dynamic User Data**:
+   - Fetches random user data from the [Random User API](https://randomuser.me/).
+   - Displays comprehensive user information including name, gender, email, phone, address, and age.
 
-### `npm start`
+2. **Multiple Designs**:
+   - **Design 1**: A clean and static design using icons and styled components.
+   - **Design 2**: A dynamic and animated design powered by `framer-motion` for enhanced user experience.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Responsive UI**:
+   - Ensures compatibility across different devices and screen sizes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. **Design Switcher**:
+   - Allows users to toggle between Design 1 and Design 2 via buttons.
 
-### `npm test`
+## Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1. **Design1**
+- Displays user information in a card layout with a focus on structured and readable design.
+- Key components:
+  - `ProfileImageSection`: Renders the user’s profile picture.
+  - `DetailsSection`: Lists personal details and address.
+  - `InfoItem`: Reusable component for displaying an icon, label, and value.
+- Uses `react-icons` for icons.
 
-### `npm run build`
+### 2. **Design2**
+- A visually dynamic design with animations using `framer-motion`.
+- Key components:
+  - `ProfileImageSection`: Displays profile picture with animation effects.
+  - `DetailsSection`: Displays user details using the `InfoCard` component.
+  - `InfoCard`: A reusable card component with hover effects.
+- Uses `react-icons` for icons and `framer-motion` for animations.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. **App**
+- The main application component:
+  - Manages user data fetched from the API.
+  - Handles toggling between Design 1 and Design 2.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API Integration
+- Fetches user data from [Random User API](https://randomuser.me/).
+- API call: `https://randomuser.me/api/?page=1&results=1&seed=abc`
+- Data includes user’s name, gender, email, phone, location, picture, and date of birth.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Styling
+- CSS files:
+  - `App.css`: Styles for the main application layout and design switcher.
+  - `Design1.css`: Styles specific to Design 1.
+  - `Design2.css`: Styles specific to Design 2.
+- Incorporates modular and reusable CSS classes.
 
-### `npm run eject`
+## Libraries and Dependencies
+- **React**: Frontend framework.
+- **react-icons**: For rendering icons.
+- **framer-motion**: For animations in Design 2.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Setup and Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/NalagamdinniRaju/Display-Profile-.git
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Navigate to the project directory:
+   ```bash
+   cd profile-card-app
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Open the application in your browser at [http://localhost:3000](http://localhost:3000).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Folder Structure
+```
+profile-card-app/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Design1.js
+│   │   ├── Design2.js
+│   │   ├── InfoCard.js
+│   ├── styles/
+│   │   ├── App.css
+│   │   ├── Design1.css
+│   │   ├── Design2.css
+│   ├── App.js
+│   ├── index.js
+└── package.json
+```
 
-### Code Splitting
+## Future Enhancements
+- Add more designs.
+- Implement dark mode.
+- Include additional user details such as hobbies and social media links.
+- Cache API results to reduce unnecessary network requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
