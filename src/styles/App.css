@@ -1,0 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+.app {
+  min-height: 100vh;
+ }
+ 
+ .design-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+ }
+ 
+ .design-switcher button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+ }
+ 
+ .design-switcher button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+ }
+ 
+ .design-switcher button.active {
+  background: #4a90e2;
+  color: white;
+ }
+ 
+ .loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #4a5568;
+ }
+ 
+ @media (max-width: 768px) {
+  .app {
+    padding: 10px;
+  }
+  
+  .design-switcher {
+    position: static;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+ }
